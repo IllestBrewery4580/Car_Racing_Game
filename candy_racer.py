@@ -73,6 +73,7 @@ interceptors = []
 
 # ---- CHECK COLLISIONS ----
 def check_collisions():
+    global score
     score += 10
     update_score()
     for m in missile[:]:
@@ -125,7 +126,8 @@ round_num = 1
 round_text = canvas.create_text(500, 50, text=f"Wave: {round_num}", font=("Helvetica", 14), fill="white")
 
 def update_round():
-    global round_numround_num += 1
+    global round_num
+    round_num += 1
     canvas.itemconfig(round_text, text=f"Wave: {round_num}")
 
 # ---- FIRE INTERCEPTOR ----
